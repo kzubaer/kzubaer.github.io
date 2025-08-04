@@ -74,17 +74,25 @@
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
             margin: 0 auto 20px;
-            font-size: 48px;
-            font-weight: bold;
-            color: white;
             position: relative;
             z-index: 1;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
         }
 
         .name {
@@ -188,17 +196,44 @@
         }
 
         .research-card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
             color: white;
             padding: 25px;
             border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(17, 153, 142, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .research-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 35px rgba(17, 153, 142, 0.4);
+        }
+
+        .research-card:nth-child(2) {
+            background: linear-gradient(135deg, #0ba360 0%, #3cba92 100%);
+            box-shadow: 0 10px 25px rgba(11, 163, 96, 0.3);
+        }
+
+        .research-card:nth-child(2):hover {
+            box-shadow: 0 15px 35px rgba(11, 163, 96, 0.4);
+        }
+
+        .research-card:nth-child(3) {
+            background: linear-gradient(135deg, #56ab2f 0%, #a8e6cf 100%);
+            box-shadow: 0 10px 25px rgba(86, 171, 47, 0.3);
+        }
+
+        .research-card:nth-child(3):hover {
+            box-shadow: 0 15px 35px rgba(86, 171, 47, 0.4);
+        }
+
+        .research-card:nth-child(4) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .research-card:nth-child(4):hover {
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
         }
 
         .research-card h3 {
@@ -230,20 +265,20 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #4ecdc4, #44a08d);
+            background: linear-gradient(90deg, #11998e, #38ef7d);
             border-radius: 20px 20px 0 0;
         }
 
         .skill-category:nth-child(2)::before {
-            background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+            background: linear-gradient(90deg, #0ba360, #3cba92);
         }
 
         .skill-category:nth-child(3)::before {
-            background: linear-gradient(90deg, #a8edea, #fed6e3);
+            background: linear-gradient(90deg, #56ab2f, #a8e6cf);
         }
 
         .skill-category:nth-child(4)::before {
-            background: linear-gradient(90deg, #ffecd2, #fcb69f);
+            background: linear-gradient(90deg, #2dd4bf, #10b981);
         }
 
         .skill-category:hover {
@@ -284,30 +319,30 @@
 
         .skill-item {
             display: inline-block;
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #11998e, #38ef7d);
             color: white;
             padding: 8px 16px;
             margin: 4px 8px 4px 0;
             border-radius: 25px;
             font-size: 0.9em;
             font-weight: 500;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 4px 15px rgba(17, 153, 142, 0.3);
             transition: all 0.3s ease;
             cursor: pointer;
         }
 
         .skill-item:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 25px rgba(17, 153, 142, 0.4);
         }
 
         .skill-item:nth-child(even) {
-            background: linear-gradient(135deg, #f093fb, #f5576c);
-            box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+            background: linear-gradient(135deg, #0ba360, #3cba92);
+            box-shadow: 0 4px 15px rgba(11, 163, 96, 0.3);
         }
 
         .skill-item:nth-child(even):hover {
-            box-shadow: 0 8px 25px rgba(240, 147, 251, 0.4);
+            box-shadow: 0 8px 25px rgba(11, 163, 96, 0.4);
         }
 
         .skill-progress {
@@ -335,7 +370,7 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #4ecdc4, #44a08d);
+            background: linear-gradient(90deg, #11998e, #38ef7d);
             border-radius: 4px;
             transition: width 2s ease;
             animation: fillProgress 2s ease-in-out;
@@ -505,21 +540,23 @@
     <div class="container">
         <div class="portfolio">
             <header class="header">
-                <div class="profile_image">KZ</div>
+                <div class="profile-img">
+                    <img src="https://drive.google.com/uc?export=view&id=15NAg9WqbRvVld5YrazV_KO0HMT8yWekm" alt="Kazi Md Zubaer" />
+                </div>
                 <h1 class="name">Kazi Md Zubaer</h1>
                 <p class="title">Supramolecular Chemistry Researcher</p>
                 <div class="contact-info">
                     <div class="contact-item">
                         <span>📧</span>
-                        <span>kzubaer@email.sc.edu</span>
+                        <span>zubaer.research@email.com</span>
                     </div>
                     <div class="contact-item">
                         <span>🔬</span>
-                        <span>Linda Shimizu Group</span>
+                        <span>Research Laboratory</span>
                     </div>
                     <div class="contact-item">
                         <span>📍</span>
-                        <span>University of South Carolina</span>
+                        <span>University/Institution</span>
                     </div>
                 </div>
             </header>
@@ -741,5 +778,4 @@
         });
     </script>
 </body>
-
 </html>
