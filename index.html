@@ -206,7 +206,30 @@
             background-clip: text;
             animation: fadeInUp 1s ease-out;
         }
+        .cv-download-btn {
+                    background: linear-gradient(135deg, #8a2be2, #4b0082);
+                    color: white !important;
+                    padding: 8px 16px;
+                    border-radius: 25px;
+                    text-decoration: none;
+                    font-weight: 600;
+                    font-size: 0.9rem;
+                    transition: all 0.3s ease;
+                    border: 2px solid transparent;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                }
+        .cv-download-btn:hover {
+            background: linear-gradient(135deg, #9a3bf2, #5b1092);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(138, 43, 226, 0.4);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
 
+        .cv-download-btn::after {
+            display: none;
+        }
         .hero .subtitle {
             font-size: 1.5rem;
             margin-bottom: 2rem;
@@ -722,6 +745,7 @@
             <div class="cta-buttons">
                 <a href="#research" class="btn btn-primary">View Research</a>
                 <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                <a href="#" class="cv-download-btn" onclick="downloadCV()">📄 Download CV</a>
             </div>
         </div>
     </section>
@@ -1191,3 +1215,4 @@
     </script>
 </body>
 </html>
+
