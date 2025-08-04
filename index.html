@@ -124,11 +124,41 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255 , 255, 255, 0.1);
             padding: 8px 16px;
             border-radius: 20px;
             transition: transform 0.3s ease;
         }
+
+        .contact-item img {
+            background-color: transparent;
+            width: 20px;
+            height: 20px;
+        }
+        .contact-item a:link {
+            color: white;
+            background-color: transparent;
+            text-decoration: none
+        }
+        
+        .contact-item a:visited {
+            color: pink;
+            background-color: transparent;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+        color: red;
+        background-color: transparent;
+        text-decoration: underline;
+        }
+
+        .contact-item a:active {
+        color: yellow;
+        background-color: transparent;
+        text-decoration: underline;
+        }
+    
 
         .contact-item:hover {
             transform: translateY(-2px);
@@ -548,15 +578,15 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <span>📧</span>
-                        <span>kzubaer@email.sc.edu</span>
+                        <span><a href="mailto:someone@example.com" target="_blank">kzubaer@email.sc.edu</a></span>
                     </div>
                     <div class="contact-item">
                         <span>🔬</span>
-                        <span><a href="https://shimizu-uofsc.net/Linda_Shimizu/">Linda shimizu Group</a></span>
+                        <span><a href="https://shimizu-uofsc.net/Linda_Shimizu/" target="_blank">Linda Shimizu Group</a></span>
                     </div>
                     <div class="contact-item">
-                        <span>📍</span>
-                        <span>University of South Carolina</span>
+                        <span><img src="usc_logo.png" alt="USC"></span>
+                        <span><a href="https://sc.edu/" target="_blank">University of South Carolina</a></span>
                     </div>
                 </div>
             </header>
