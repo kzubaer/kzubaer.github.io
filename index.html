@@ -1697,18 +1697,87 @@
     function enableAdminMode() {
         const input = prompt("Enter admin password:");
         if (input === adminPassword) {
-            document.querySelectorAll('.uploadBtn').forEach(btn => {
-                btn.style.display = 'inline-block';
-            });
+            localStorage.setItem('isAdmin', 'true');
+            showUploadButtons();
         } else {
             alert("Incorrect password.");
         }
     }
 
-    // Hide all upload buttons by default
+    function showUploadButtons() {
+        document.querySelectorAll('.uploadBtn').forEach(btn => {
+            btn.style.display = 'inline-block';
+        });
+    }
+
+    function savePhoto(sectionId, imgSrc) {
+        let photos = JSON.parse(localStorage.getItem(sectionId) || '[]');
+        photos.unshift(imgSrc);
+        localStorage.setItem(sectionId, JSON.stringify(photos));
+    }
+
+    function loadPhotos(sectionId, targetGrid) {
+        let photos = JSON.parse(localStorage.getItem(sectionId) || '[]');
+        photos.forEach(imgSrc => {
+            const newItem = document.createElement('div');
+            newItem.classList.add('gallery-item');
+            newItem.innerHTML = `
+                <img src="${imgSrc}" alt="Uploaded Photo">
+                <div class="gallery-overlay">
+                    <div class="gallery-title">Uploaded Photo</div>
+                    <div class="gallery-description">Added by user</div>
+                </div>
+            `;
+            newItem.onclick = () => openModal(imgSrc, 'Uploaded Photo', 'Added by user');
+            targetGrid.appendChild(newItem);
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.uploadBtn').forEach(btn => {
             btn.style.display = 'none';
+        });
+
+        if (localStorage.getItem('isAdmin') === 'true') {
+            showUploadButtons();
+        }
+
+        document.querySelectorAll('.uploadBtn').forEach((btn) => {
+            const fileInput = btn.nextElementSibling;
+            const targetGridId = btn.dataset.target;
+            const targetGrid = document.getElementById(targetGridId);
+
+            // Load saved photos for this section
+            loadPhotos(targetGridId, targetGrid);
+
+            btn.addEventListener('click', () => fileInput.click());
+
+            fileInput.addEventListener('change', (event) => {
+                const files = Array.from(event.target.files);
+                files.forEach(file => {
+                    if (file && file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const imgSrc = e.target.result;
+                            const newItem = document.createElement('div');
+                            newItem.classList.add('gallery-item');
+                            newItem.innerHTML = `
+                                <img src="${imgSrc}" alt="Uploaded Photo">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-title">Uploaded Photo</div>
+                                    <div class="gallery-description">Added by user</div>
+                                </div>
+                            `;
+                            newItem.onclick = () => openModal(imgSrc, 'Uploaded Photo', 'Added by user');
+                            targetGrid.prepend(newItem);
+
+                            // Save in localStorage
+                            savePhoto(targetGridId, imgSrc);
+                        }
+                        reader.readAsDataURL(file);
+                    }
+                });
+            });
         });
     });
         </script>
