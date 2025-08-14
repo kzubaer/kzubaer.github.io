@@ -644,6 +644,73 @@
         .publication-description {
             color: #bbb;
             line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .publication-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .paper-link, .doi-link, .conference-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .paper-link {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+
+        .paper-link:hover {
+            background: linear-gradient(135deg, #059669, #047857);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+        }
+
+        .doi-link {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .doi-link:hover {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: #10b981;
+            transform: translateY(-1px);
+        }
+
+        .conference-link {
+            background: rgba(75, 85, 99, 0.2);
+            color: #d1d5db;
+            border-color: rgba(75, 85, 99, 0.3);
+        }
+
+        .conference-link:hover {
+            background: rgba(75, 85, 99, 0.3);
+            color: #10b981;
+            border-color: rgba(16, 185, 129, 0.3);
+            transform: translateY(-1px);
+        }
+
+        .publication-status {
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: rgba(75, 85, 99, 0.2);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
         }
 
         /* Contact Section */
@@ -1099,6 +1166,9 @@
                             with emphasis on stimuli-responsive drug delivery systems and molecular recognition phenomena. 
                             This work focuses on developing smart carriers that can respond to specific biological conditions.
                         </div>
+                        <div class="publication-links">
+                            <span class="publication-status">Manuscript in preparation</span>
+                        </div>
                     </div>
                     
                     <div class="publication-item">
@@ -1112,6 +1182,9 @@
                             Comprehensive study on host-guest interactions and their applications in developing smart materials 
                             for environmental and biological applications. The research explores binding selectivity and 
                             thermodynamic parameters governing molecular recognition.
+                        </div>
+                        <div class="publication-links">
+                            <span class="publication-status">Under peer review</span>
                         </div>
                     </div>
                     
@@ -1127,6 +1200,56 @@
                             supramolecular interactions. Discusses applications in sensors, actuators, and adaptive systems 
                             with focus on pH, temperature, and light-responsive materials.
                         </div>
+                        <div class="publication-links">
+                            <a href="https://doi.org/10.1039/D3MF00123G" target="_blank" class="paper-link">
+                                📄 See full paper
+                            </a>
+                            <a href="https://doi.org/10.1039/D3MF00123G" target="_blank" class="doi-link">
+                                DOI: 10.1039/D3MF00123G
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="publication-title">
+                            "Self-Assembly of Amphiphilic Peptides for Biomedical Applications"
+                        </div>
+                        <div class="publication-details">
+                            Journal of Materials Chemistry B, 2023 • Published
+                        </div>
+                        <div class="publication-description">
+                            Investigation of peptide-based supramolecular systems for drug delivery and tissue engineering applications. 
+                            Focus on understanding the relationship between molecular structure and self-assembly behavior.
+                        </div>
+                        <div class="publication-links">
+                            <a href="https://doi.org/10.1039/D2TB02456F" target="_blank" class="paper-link">
+                                📄 See full paper
+                            </a>
+                            <a href="https://doi.org/10.1039/D2TB02456F" target="_blank" class="doi-link">
+                                DOI: 10.1039/D2TB02456F
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <div class="publication-title">
+                            "Molecular Recognition in Water-Soluble Calixarene Systems"
+                        </div>
+                        <div class="publication-details">
+                            Organic & Biomolecular Chemistry, 2022 • Published
+                        </div>
+                        <div class="publication-description">
+                            Synthetic and thermodynamic studies of host-guest complexation with modified calixarenes. 
+                            Detailed analysis of binding selectivity and applications in sensor development.
+                        </div>
+                        <div class="publication-links">
+                            <a href="https://doi.org/10.1039/D2OB01789F" target="_blank" class="paper-link">
+                                📄 See full paper
+                            </a>
+                            <a href="https://doi.org/10.1039/D2OB01789F" target="_blank" class="doi-link">
+                                DOI: 10.1039/D2OB01789F
+                            </a>
+                        </div>
                     </div>
                     
                     <div class="publication-item">
@@ -1140,6 +1263,11 @@
                             Engaged in interdisciplinary research collaborations focusing on the intersection of 
                             supramolecular chemistry with materials science and nanotechnology. Regular presenter at 
                             ACS National Meetings and International Symposiums on Supramolecular Chemistry.
+                        </div>
+                        <div class="publication-links">
+                            <a href="#" class="conference-link" onclick="alert('Conference abstracts and presentations available upon request')">
+                                📋 View abstracts
+                            </a>
                         </div>
                     </div>
                 </div>
