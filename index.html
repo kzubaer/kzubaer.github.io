@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kazi Md Zubaer - Supramolecular Chemistry Researcher</title>
     <style>
+        /* Include your entire original CSS from the uploaded file here */
         * {
             margin: 0;
             padding: 0;
@@ -48,7 +49,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: #fff;
+            color: #f2f2f2;
             text-decoration: none;
         }
 
@@ -57,13 +58,13 @@
             list-style: none;
             gap: 2rem;
         }
-
+      
         .nav-link {
             color: #fff;
             text-decoration: none;
             transition: color 0.3s ease;
             position: relative;
-        }
+                    }
 
         .nav-link:hover {
             color: #10b981;
@@ -900,10 +901,14 @@
             opacity: 1;
             transform: translateY(0);
         }
-    </style>
+        .admin-btn{
+            position: relative;
+            background-color: transparent;
+        }
+ </style>
 </head>
-<body>
-    <!-- Navigation -->
+<body>!-- Include your full original Navigation, Hero, About sections here -->
+    <<!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">Kazi Md Zubaer</a>
@@ -914,8 +919,9 @@
                 <li><a href="#research" class="nav-link">Research</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#publications" class="nav-link">Publications</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>              
             </ul>
+            <button onclick="enableAdminMode()" class="btn admin-btn btn-secondary">Admin Login</button>
         </div>
     </nav>
 
@@ -996,71 +1002,70 @@
             </div>
         </section>
 
-        <!-- Photo Gallery Section -->
-        <section id="gallery" class="section">
-            <div class="container">
-                <h2 class="section-title fade-in">Photo Gallery</h2>
-                <div class="gallery-grid fade-in">
-                    <div class="gallery-item" onclick="openModal('https://picsum.photos/600/400?random=1', 'Laboratory Research', 'Working on supramolecular synthesis in the lab')">
-                        <img src="https://picsum.photos/400/250?random=1" alt="Laboratory Research">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Laboratory Research</div>
-                            <div class="gallery-description">Working on supramolecular synthesis in the lab</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item" onclick="openModal('https://picsum.photos/600/400?random=2', 'ACS Conference 2023', 'Presenting research at the American Chemical Society meeting')">
-                        <img src="https://picsum.photos/400/250?random=2" alt="ACS Conference 2023">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">ACS Conference 2023</div>
-                            <div class="gallery-description">Presenting research at the American Chemical Society meeting</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item" onclick="openModal('https://picsum.photos/600/400?random=3', 'NMR Analysis', 'Analyzing molecular structures using NMR spectroscopy')">
-                        <img src="https://picsum.photos/400/250?random=3" alt="NMR Analysis">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">NMR Analysis</div>
-                            <div class="gallery-description">Analyzing molecular structures using NMR spectroscopy</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item" onclick="openModal('https://picsum.photos/600/400?random=4', 'Crystallization Work', 'Growing crystals for X-ray crystallography studies')">
-                        <img src="https://picsum.photos/400/250?random=4" alt="Crystallization Work">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Crystallization Work</div>
-                            <div class="gallery-description">Growing crystals for X-ray crystallography studies</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item" onclick="openModal('https://picsum.photos/600/400?random=5', 'Research Team', 'Collaborating with fellow researchers in the Shimizu Group')">
-                        <img src="https://picsum.photos/400/250?random=5" alt="Research Team">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Research Team</div>
-                            <div class="gallery-description">Collaborating with fellow researchers in the Shimizu Group</div>
-                        </div>
-                    </div>
-                    <div class="gallery-item" onclick="openModal('https://picsum.photos/600/400?random=6', 'Molecular Models', 'Building and studying supramolecular structures')">
-                        <img src="https://picsum.photos/400/250?random=6" alt="Molecular Models">
-                        <div class="gallery-overlay">
-                            <div class="gallery-title">Molecular Models</div>
-                            <div class="gallery-description">Building and studying supramolecular structures</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Photo Gallery Section with Upload -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in">Photo Gallery</h2>
 
-        <!-- Photo Modal -->
-        <div id="photoModal" class="modal" onclick="closeModal()">
-            <div class="modal-content" onclick="event.stopPropagation()">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <img id="modalImage" class="modal-image" src="" alt="">
-                <div class="modal-info">
-                    <div id="modalTitle" class="modal-title"></div>
-                    <div id="modalDescription" class="modal-description"></div>
-                </div>
+            <div class="gallery-category">
+                <h3>Laboratory Research</h3>
+                <button class="uploadBtn btn btn-primary" data-target="labResearchGrid">Upload Photos</button>
+                <input type="file" class="fileInput" accept="image/*" multiple style="display:none">
+                <div class="gallery-grid fade-in" id="labResearchGrid"></div>
+            </div>
+
+            <div class="gallery-category">
+                <h3>ACS Conference 2023</h3>
+                <button class="uploadBtn btn btn-primary" data-target="acsConferenceGrid">Upload Photos</button>
+                <input type="file" class="fileInput" accept="image/*" multiple style="display:none">
+                <div class="gallery-grid fade-in" id="acsConferenceGrid"></div>
+            </div>
+
+            <div class="gallery-category">
+                <h3>Poster Presentation</h3>
+                <button class="uploadBtn btn btn-primary" data-target="posterPresentationGrid">Upload Photos</button>
+                <input type="file" class="fileInput" accept="image/*" multiple style="display:none">
+                <div class="gallery-grid fade-in" id="posterPresentationGrid"></div>
+            </div>
+
+            <div class="gallery-category">
+                <h3>Crystallization Work</h3>
+                <button class="uploadBtn btn btn-primary" data-target="crystallizationGrid">Upload Photos</button>
+                <input type="file" class="fileInput" accept="image/*" multiple style="display:none">
+                <div class="gallery-grid fade-in" id="crystallizationGrid"></div>
+            </div>
+
+            <div class="gallery-category">
+                <h3>Research Team</h3>
+                <button class="uploadBtn btn btn-primary" data-target="researchTeamGrid">Upload Photos</button>
+                <input type="file" class="fileInput" accept="image/*" multiple style="display:none">
+                <div class="gallery-grid fade-in" id="researchTeamGrid"></div>
+            </div>
+
+            <div class="gallery-category">
+                <h3>Molecular Models</h3>
+                <button class="uploadBtn btn btn-primary" data-target="molecularModelsGrid">Upload Photos</button>
+                <input type="file" class="fileInput" accept="image/*" multiple style="display:none">
+                <div class="gallery-grid fade-in" id="molecularModelsGrid"></div>
             </div>
         </div>
+    </section>
 
-        <!-- Research Section -->
-        <section id="research" class="section">
+    <!-- Photo Modal -->
+    <div id="photoModal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" class="modal-image" src="" alt="">
+            <div class="modal-info">
+                <div id="modalTitle" class="modal-title"></div>
+                <div id="modalDescription" class="modal-description"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Include your full original Research, Skills, Publications, Contact, Footer sections here -->
+ <section id="research" class="section">
             <div class="container">
                 <h2 class="section-title fade-in">Research Interests</h2>
                 <div class="research-grid fade-in">
@@ -1380,9 +1385,9 @@
             <p>Advancing Supramolecular Chemistry Through Innovation</p>
         </div>
     </footer>
-
     <script>
-        // Photo Modal Functions
+        // Include all your original JavaScript from the uploaded file here
+// Photo Modal Functions
         function openModal(imageSrc, title, description) {
             const modal = document.getElementById('photoModal');
             const modalImage = document.getElementById('modalImage');
@@ -1641,12 +1646,72 @@
         }, { threshold: 0.1 });
 
         // Initialize gallery animations
-        document.querySelectorAll('.gallery-item').forEach((item, index) => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(50px)';
-            item.style.transition = 'all 0.6s ease';
-            galleryObserver.observe(item);
+        document.querySelectorAll('.uploadBtn').forEach((btn, index) => {
+            const fileInput = btn.nextElementSibling;
+            const targetGridId = btn.dataset.target;
+            const targetGrid = document.getElementById(targetGridId);
+
+            btn.addEventListener('click', () => fileInput.click());
+
+            fileInput.addEventListener('change', (event) => {
+                const files = Array.from(event.target.files);
+                files.forEach(file => {
+                    if (file && file.type.startsWith('image/')) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const imgSrc = e.target.result;
+                            const newItem = document.createElement('div');
+                            newItem.classList.add('gallery-item');
+                            newItem.innerHTML = `
+                                <img src="${imgSrc}" alt="Uploaded Photo">
+                                <div class="gallery-overlay">
+                                    <div class="gallery-title">Uploaded Photo</div>
+                                    <div class="gallery-description">Added by user</div>
+                                </div>
+                            `;
+                            newItem.onclick = () => openModal(imgSrc, 'Uploaded Photo', 'Added by user');
+                            targetGrid.prepend(newItem);
+                        }
+                        reader.readAsDataURL(file);
+                    }
+                });
+            });
         });
-    </script>
+
+        function openModal(imageSrc, title, description) {
+            const modal = document.getElementById('photoModal');
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('photoModal');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        const adminPassword = "68312313"; // Change this to your password
+
+    function enableAdminMode() {
+        const input = prompt("Enter admin password:");
+        if (input === adminPassword) {
+            document.querySelectorAll('.uploadBtn').forEach(btn => {
+                btn.style.display = 'inline-block';
+            });
+        } else {
+            alert("Incorrect password.");
+        }
+    }
+
+    // Hide all upload buttons by default
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.uploadBtn').forEach(btn => {
+            btn.style.display = 'none';
+        });
+    });
+        </script>
+        
 </body>
 </html>
