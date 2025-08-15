@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Research — Dr. Your Name</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html"><span class="brand-name">Dr. Your Name</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="publications.html">Publications</a></li>
+      </ul>
+      <a class="cta" href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Research & Publications</h2>
+
+      <div class="project-list">
+        <!-- EDIT: Add full project descriptions, links, DOIs -->
+        <article class="project" data-aos="fade-up" data-aos-delay="50">
+          <h3>1. Tuning supramolecular polymer length with chain stoppers</h3>
+          <p>Summary: precise control of polymer length via monofunctional chain stoppers — synthesis, spectroscopy, TEM characterization. <em>(Journal, Year)</em></p>
+          <p class="project-meta">DOI: <a href="#">10.xxxx/xxxx</a> • Poster: ACS 2025</p>
+        </article>
+
+        <article class="project" data-aos="fade-up" data-aos-delay="120">
+          <h3>2. VT-UV–Vis study of cooperative assembly</h3>
+          <p>Summary: Temperature dependent UV–Vis reveals cooperative binding and critical points in assembly pathways.</p>
+          <p class="project-meta">Supplementary data available on request.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>Dr. Your Name</strong></div>
+      <div class="socials"><a href="#">ORCID</a> <a href="#">Scholar</a></div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="main.js"></script>
+  <script>AOS.init({ once: true, easing: 'ease-out-cubic' });</script>
+</body>
+</html>

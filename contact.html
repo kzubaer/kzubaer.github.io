@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Kazi Md Zubaer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-page">
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="brand" href="index.html"><span class="brand-name">Kazi Md Zubaer</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" >Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="publications.html">Publications</a></li>
+      </ul>
+      <a class="cta" href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Get in touch</h2>
+      <p>Interested in collaboration, invited talks, or questions about my work? Send a note below.</p>
+
+      <form id="contact-form" class="contact-form" data-aos="fade-up" data-aos-delay="80">
+        <label>
+          <span>Your name</span>
+          <input required type="text" name="name" placeholder="Your name">
+        </label>
+
+        <label>
+          <span>Email</span>
+          <input required type="email" name="email" placeholder="you@institution.edu">
+        </label>
+
+        <label>
+          <span>Message</span>
+          <textarea required name="message" rows="6" placeholder="Short message..."></textarea>
+        </label>
+
+        <button class="btn btn-primary" type="submit">Send message</button>
+        <p id="form-response" class="form-response" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div><strong>Kazi Md Zubaer</strong></div>
+      <div class="socials"><a href="#">ORCID</a> <a href="#">Scholar</a></div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="main.js"></script>
+  <script>
+    AOS.init({ once: true });
+    // simple client-only form demo
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('form-response').textContent = 'Thanks! Your message was recorded locally in the demo. Replace this with your email backend or form service.';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
