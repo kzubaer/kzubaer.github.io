@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CV - Kazi Md Zubaer</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Source Sans Pro", sans-serif;
+        line-height: 1.6;
+        color: #2c3e50;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
+
+      .cv-container {
+        max-width: 850px;
+        margin: 0 auto;
+        background: #ffffff;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .cv-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
+      }
+
+      .header {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        padding: 50px 40px 40px;
+        text-align: center;
+        position: relative;
+      }
+
+      .header::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 2px;
+      }
+
+      .name {
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        letter-spacing: -1px;
+      }
+
+      .contact-info {
+        font-size: 1.1rem;
+        color: #5a6c7d;
+        font-weight: 300;
+        line-height: 1.8;
+      }
+
+      .contact-info strong {
+        color: #667eea;
+        font-weight: 600;
+      }
+
+      .main-content {
+        padding: 50px 40px;
+      }
+
+      .section {
+        margin-bottom: 45px;
+      }
+
+      .section:last-child {
+        margin-bottom: 0;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #2c3e50;
+        margin-bottom: 25px;
+        position: relative;
+        padding-bottom: 10px;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 2px;
+      }
+
+      .education-item,
+      .experience-item {
+        margin-bottom: 25px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .education-item::before,
+      .experience-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 8px;
+        height: 8px;
+        background: #667eea;
+        border-radius: 50%;
+      }
+
+      .institution,
+      .role {
+        font-weight: 600;
+        font-size: 1.1rem;
+        color: #2c3e50;
+        margin-bottom: 5px;
+      }
+
+      .degree,
+      .company {
+        color: #5a6c7d;
+        font-style: italic;
+        margin-bottom: 8px;
+      }
+
+      .gpa,
+      .duration {
+        color: #764ba2;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+
+      .description {
+        color: #5a6c7d;
+        line-height: 1.6;
+        margin-top: 8px;
+      }
+
+      .research-interests {
+        color: #5a6c7d;
+        line-height: 1.8;
+        font-size: 1.05rem;
+      }
+
+      .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .skill-category {
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+      }
+
+      .skill-category:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      }
+
+      .programming {
+        background: linear-gradient(135deg, #f093fb, #f5576c);
+      }
+
+      .languages {
+        background: linear-gradient(135deg, #4facfe, #00f2fe);
+      }
+
+      .instruments {
+        background: linear-gradient(135deg, #43e97b, #38f9d7);
+      }
+
+      .download-section {
+        text-align: center;
+        padding: 40px 0;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        margin: 30px -40px 0;
+        border-top: 3px solid #667eea;
+      }
+
+      .download-btn {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        padding: 15px 35px;
+        border: none;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+        margin: 0 15px 10px;
+        text-decoration: none;
+        font-family: "Source Sans Pro", sans-serif;
+        min-width: 160px;
+      }
+
+      .download-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        background: linear-gradient(135deg, #5a6fd8, #6a4190);
+      }
+
+      .download-btn:active {
+        transform: translateY(-1px);
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .simple-btn {
+        background: linear-gradient(135deg, #43e97b, #38f9d7) !important;
+      }
+
+      .simple-btn:hover {
+        background: linear-gradient(135deg, #39d46d, #32e6c5) !important;
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media print {
+        body {
+          background: white;
+          padding: 0;
+          margin: 0;
+        }
+
+        .cv-container {
+          box-shadow: none;
+          border-radius: 0;
+          max-width: none;
+          width: 100%;
+          margin: 0;
+          padding: 20px;
+        }
+
+        .download-section {
+          display: none !important;
+        }
+
+        .section {
+          page-break-inside: avoid;
+          margin-bottom: 25px;
+        }
+
+        .education-item,
+        .experience-item {
+          page-break-inside: avoid;
+          margin-bottom: 15px;
+        }
+
+        .header {
+          page-break-after: avoid;
+        }
+
+        .skills-container {
+          page-break-inside: avoid;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .name {
+          font-size: 2.5rem;
+        }
+
+        .main-content,
+        .header {
+          padding: 30px 25px;
+        }
+
+        .skills-container {
+          justify-content: center;
+        }
+
+        .download-btn {
+          display: block;
+          margin: 10px auto;
+          width: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cv-container">
+      <header class="header">
+        <h1 class="name">Kazi Md Zubaer</h1>
+        <div class="contact-info">
+          <strong>Email:</strong> kzubaer@gmail.com | kzubaer@email.sc.edu<br />
+          <strong>Phone:</strong> +1 (803) 497-1636
+        </div>
+      </header>
+
+      <div class="main-content">
+        <section class="section">
+          <h2 class="section-title">Education</h2>
+
+          <div class="education-item">
+            <div class="institution">University of South Carolina</div>
+            <div class="degree">PhD in Chemistry (2nd year)</div>
+          </div>
+
+          <div class="education-item">
+            <div class="institution">Ball State University</div>
+            <div class="degree">M.S. in Chemistry</div>
+          </div>
+
+          <div class="education-item">
+            <div class="institution">University of Dhaka</div>
+            <div class="degree">M.S. in Organic Chemistry with Thesis</div>
+          </div>
+
+          <div class="education-item">
+            <div class="institution">University of Dhaka</div>
+            <div class="degree">B.S. in Chemistry</div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Research Experience</h2>
+
+          <div class="experience-item">
+            <div class="role">PhD Researcher</div>
+            <div class="company">University of South Carolina</div>
+            <div class="description">
+              Synthesis of supramolecular polymers, characterization,
+              self-assembly, host-guest chemistry, controlling the length of the
+              polymer using chain stoppers.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="role">MS Researcher</div>
+            <div class="company">Ball State University</div>
+            <div class="description">
+              Synthesis and Characterization of Bismuth-based MOFs with BiVO4
+              for POP degradation. Instruments used: UV-Vis, FT-IR, HPLC, GC,
+              UV-DRS, BET, TEM, XRD, Freeze drying, TGA.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="role">MS Researcher</div>
+            <div class="company">University of Dhaka</div>
+            <div class="description">
+              Chemical Investigation on The Leaves of Corchorus olitorius L.
+              Instruments: UV-Vis, IR, HPLC, GC, potentiometer, polarimeter.
+              Various extraction processes.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="role">BS Researcher</div>
+            <div class="company">University of Dhaka</div>
+            <div class="description">
+              Phytochemical investigation on Cauliflower & Cabbage. Instruments:
+              UV-Vis, IR, HPLC. Hot/cold extraction, chromatography (TLC, CC).
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Professional Experience</h2>
+          <div class="experience-item">
+            <div class="role">Graduate Teaching Assistant</div>
+            <div class="company">University of South Carolina</div>
+            <div class="description">
+              Proctoring, grading, instructing labs (CHEM 331L, 332L).
+            </div>
+          </div>
+          <div class="experience-item">
+            <div class="role">Graduate Teaching Assistant</div>
+            <div class="company">Ball State University</div>
+            <div class="description">
+              Proctoring, grading, instructing labs (CHEM 101, 111, 112),
+              tutoring.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="role">Lecturer of Chemistry</div>
+            <div class="company">Scholars' School & College (2018–2022)</div>
+            <div class="description">
+              Developed lesson plans, engaged students via experiments and
+              presentations, taught lab safety, revised content for
+              student-centered learning.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="role">Analytical Chemist</div>
+            <div class="company">Eskayef Pharmaceuticals Ltd. (2017–2018)</div>
+            <div class="description">
+              Analyzed pharmaceutical products, calibrated instruments,
+              developed methodologies for pesticide residue analysis.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="role">Quality Control Chemist</div>
+            <div class="company">Popular Pharmaceuticals Ltd. (2016–2017)</div>
+            <div class="description">
+              Quality checks of raw and finished products, troubleshooting
+              instruments, SOP training.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="role">Vice President</div>
+            <div class="company">
+              Dhaka University Students' Association of Uttara (DUSAU)
+            </div>
+            <div class="description">
+              Organized events, social activities, problem-solving, community
+              service.
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Research Interests</h2>
+          <div class="research-interests">
+            Environmental Chemistry • Analytical Chemistry • Medicinal Chemistry
+            • Nanotechnology • Computational Chemistry • Natural Chemistry •
+            Bioorganic Chemistry • Organic Chemistry • Electrochemistry
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-title">Technical Skills</h2>
+          <div class="skills-container">
+            <span class="skill-category instruments">NMR</span>
+            <span class="skill-category instruments">DLS</span>
+            <span class="skill-category instruments">HPLC</span>
+            <span class="skill-category instruments">UV-Vis</span>
+            <span class="skill-category instruments">FT-IR</span>
+            <span class="skill-category instruments">Polarimeter</span>
+            <span class="skill-category instruments">Potentiometer</span>
+            <span class="skill-category instruments">KF Titrator</span>
+            <span class="skill-category instruments">GC</span>
+            <span class="skill-category instruments">TLC</span>
+            <span class="skill-category instruments">BET</span>
+            <span class="skill-category instruments">TGA</span>
+            <span class="skill-category instruments">UV-DRS</span>
+            <span class="skill-category instruments">XRD</span>
+            <span class="skill-category instruments">TEM</span>
+            <span class="skill-category programming">HTML</span>
+            <span class="skill-category programming">CSS</span>
+            <span class="skill-category programming">Bootstrap</span>
+            <span class="skill-category programming">JavaScript</span>
+            <span class="skill-category programming">Photoshop</span>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function downloadPDF() {
+        try {
+          // Create a simplified clone for PDF generation
+          const originalElement = document.querySelector(".cv-container");
+          const clonedElement = originalElement.cloneNode(true);
+
+          // Hide download section in clone
+          const cloneDownloadSection =
+            clonedElement.querySelector(".download-section");
+          if (cloneDownloadSection) {
+            cloneDownloadSection.remove();
+          }
+
+          // Simplify styles for PDF compatibility
+          const simplifyForPDF = (element) => {
+            element.style.background = "white";
+            element.style.boxShadow = "none";
+            element.style.borderRadius = "0";
+            element.style.animation = "none";
+            element.style.transform = "none";
+            element.style.transition = "none";
+
+            // Simplify gradients to solid colors
+            const gradientElements = element.querySelectorAll("*");
+            gradientElements.forEach((el) => {
+              const computedStyle = window.getComputedStyle(el);
+              if (
+                computedStyle.background &&
+                computedStyle.background.includes("gradient")
+              ) {
+                if (el.classList.contains("programming")) {
+                  el.style.background = "#f093fb";
+                } else if (el.classList.contains("languages")) {
+                  el.style.background = "#4facfe";
+                } else if (el.classList.contains("instruments")) {
+                  el.style.background = "#43e97b";
+                } else if (el.classList.contains("skill-category")) {
+                  el.style.background = "#667eea";
+                } else if (el.classList.contains("header")) {
+                  el.style.background = "#f5f7fa";
+                } else {
+                  el.style.background = "#667eea";
+                }
+              }
+              el.style.boxShadow = "none";
+              el.style.animation = "none";
+              el.style.transform = "none";
+              el.style.transition = "none";
+            });
+          };
+
+          simplifyForPDF(clonedElement);
+
+          // Create temporary container
+          const tempContainer = document.createElement("div");
+          tempContainer.style.position = "absolute";
+          tempContainer.style.left = "-9999px";
+          tempContainer.style.top = "0";
+          tempContainer.style.width = "210mm";
+          tempContainer.style.backgroundColor = "white";
+          tempContainer.appendChild(clonedElement);
+          document.body.appendChild(tempContainer);
+
+          const opt = {
+            margin: 10,
+            filename: "Kazi_Md_Zubaer_CV.pdf",
+            image: {
+              type: "jpeg",
+              quality: 0.98,
+            },
+            html2canvas: {
+              scale: 2,
+              backgroundColor: "#ffffff",
+              useCORS: true,
+              allowTaint: true,
+              letterRendering: true,
+              logging: false,
+              width: 794,
+              height: 1123,
+            },
+            jsPDF: {
+              unit: "mm",
+              format: "a4",
+              orientation: "portrait",
+            },
+            pagebreak: {
+              mode: ["css", "legacy"],
+              before: ".section",
+            },
+          };
+
+          // Show loading message
+          showLoadingMessage(
+            "📄 Generating PDF...",
+            "Please wait, this may take a few seconds"
+          );
+
+          html2pdf()
+            .set(opt)
+            .from(tempContainer)
+            .save()
+            .then(() => {
+              document.body.removeChild(tempContainer);
+              hideLoadingMessage();
+              console.log("PDF generated successfully");
+            })
+            .catch((error) => {
+              console.error("PDF generation failed:", error);
+              document.body.removeChild(tempContainer);
+              hideLoadingMessage();
+              alert(
+                "PDF generation failed. Please try the Print option instead."
+              );
+            });
+        } catch (error) {
+          console.error("Error in downloadPDF:", error);
+          alert(
+            "An error occurred while generating the PDF. Please try again."
+          );
+        }
+      }
+
+      function downloadSimplePDF() {
+        try {
+          console.log("Simple PDF function called");
+
+          // Show loading message first
+          showLoadingMessage("📋 Creating Simple PDF...", "Please wait");
+
+          // Create a completely new simplified version
+          const simpleCV = document.createElement("div");
+          simpleCV.style.cssText =
+            "max-width: 800px; margin: 0 auto; background: white; padding: 40px; font-family: Arial, sans-serif; color: #333; line-height: 1.6;";
+
+          simpleCV.innerHTML = `
+                    <div style="text-align: center; border-bottom: 3px solid #667eea; padding-bottom: 20px; margin-bottom: 30px;">
+                        <h1 style="font-size: 2.5rem; margin: 0 0 10px 0; color: #2c3e50; font-family: Arial, sans-serif;">Kazi Md Zubaer</h1>
+                        <p style="margin: 0; font-size: 1.1rem; color: #5a6c7d;">
+                            <strong>Email:</strong> kzubaer@gmail.com | kzubaer@email.sc.edu<br>
+                            <strong>Phone:</strong> +1 (803) 497-1636
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 5px; margin-bottom: 20px; font-family: Arial, sans-serif;">Education</h2>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">University of South Carolina</div>
+                            <div style="font-style: italic;">PhD in Chemistry (2nd year)</div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">Ball State University</div>
+                            <div style="font-style: italic;">M.S. in Chemistry</div>
+                            <div style="font-size: 0.9rem; color: #764ba2;">GPA: 3.82</div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">University of Dhaka</div>
+                            <div style="font-style: italic;">M.S. in Organic Chemistry with Thesis</div>
+                            <div style="font-size: 0.9rem; color: #764ba2;">GPA: 3.66/4.00 (3.87 WES) • Ranked 8th in merit list</div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">University of Dhaka</div>
+                            <div style="font-style: italic;">B.S. in Chemistry</div>
+                            <div style="font-size: 0.9rem; color: #764ba2;">CGPA: 3.04/4.00</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 5px; margin-bottom: 20px; font-family: Arial, sans-serif;">Research Experience</h2>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">PhD Researcher</div>
+                            <div style="font-style: italic;">University of South Carolina</div>
+                            <div style="margin-top: 5px;">Synthesis of supramolecular polymers, characterization, self-assembly, host-guest chemistry, controlling the length of the polymer using chain stoppers.</div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">MS Researcher</div>
+                            <div style="font-style: italic;">Ball State University</div>
+                            <div style="margin-top: 5px;">Synthesis and Characterization of Bismuth-based MOFs with BiVO4 for POP degradation. Instruments used: UV-Vis, FT-IR, HPLC, GC, UV-DRS, BET, TEM, XRD, Freeze drying, TGA.</div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">MS Researcher</div>
+                            <div style="font-style: italic;">University of Dhaka</div>
+                            <div style="margin-top: 5px;">Chemical Investigation on The Leaves of Corchorus olitorius L. Instruments: UV-Vis, IR, HPLC, GC, potentiometer, polarimeter. Various extraction processes.</div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">BS Researcher</div>
+                            <div style="font-style: italic;">University of Dhaka</div>
+                            <div style="margin-top: 5px;">Phytochemical investigation on Cauliflower & Cabbage. Instruments: UV-Vis, IR, HPLC. Hot/cold extraction, chromatography (TLC, CC).</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 5px; margin-bottom: 20px; font-family: Arial, sans-serif;">Professional Experience</h2>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">Graduate Teaching Assistant</div>
+                            <div style="font-style: italic;">Ball State University</div>
+                            <div style="margin-top: 5px;">Proctoring, grading, instructing labs (CHEM 101, 111, 112), tutoring.</div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">Lecturer of Chemistry</div>
+                            <div style="font-style: italic;">Scholars' School & College (2018–2022)</div>
+                            <div style="margin-top: 5px;">Developed lesson plans, engaged students via experiments and presentations, taught lab safety, revised content for student-centered learning.</div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">Analytical Chemist</div>
+                            <div style="font-style: italic;">Eskayef Pharmaceuticals Ltd. (2017–2018)</div>
+                            <div style="margin-top: 5px;">Analyzed pharmaceutical products, calibrated instruments, developed methodologies for pesticide residue analysis.</div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">Quality Control Chemist</div>
+                            <div style="font-style: italic;">Popular Pharmaceuticals Ltd. (2016–2017)</div>
+                            <div style="margin-top: 5px;">Quality checks of raw and finished products, troubleshooting instruments, SOP training.</div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="font-weight: bold; color: #2c3e50;">Vice President</div>
+                            <div style="font-style: italic;">DUSAU</div>
+                            <div style="margin-top: 5px;">Organized events, social activities, problem-solving, community service.</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 5px; margin-bottom: 20px; font-family: Arial, sans-serif;">Research Interests</h2>
+                        <div>Environmental Chemistry, Analytical Chemistry, Medicinal Chemistry, Nanotechnology, Computational Chemistry, Natural Chemistry, Bioorganic Chemistry, Organic Chemistry, Electrochemistry</div>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px;">
+                        <h2 style="color: #667eea; border-bottom: 2px solid #667eea; padding-bottom: 5px; margin-bottom: 20px; font-family: Arial, sans-serif;">Technical Skills</h2>
+                        <div style="margin-bottom: 10px;">
+                            <strong>Programming & Software:</strong> HTML, CSS, Bootstrap, JavaScript, Adobe Photoshop
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <strong>Languages:</strong> Bangla (Native), English
+                        </div>
+                        <div style="margin-bottom: 10px;">
+                            <strong>Analytical Instruments:</strong> HPLC, UHPLC, UV-Vis, FT-IR, Polarimeter, Potentiometer, KF Titrator, GC, TLC, BET, TGA, UV-DRS, XRD, TEM
+                        </div>
+                    </div>
+                `;
+
+          // Add to document temporarily for PDF generation
+          simpleCV.style.position = "absolute";
+          simpleCV.style.left = "-9999px";
+          simpleCV.style.top = "0";
+          document.body.appendChild(simpleCV);
+
+          const opt = {
+            margin: 15,
+            filename: "Kazi_Md_Zubaer_CV_Simple.pdf",
+            image: { type: "jpeg", quality: 1.0 },
+            html2canvas: {
+              scale: 2,
+              backgroundColor: "#ffffff",
+              logging: false,
+            },
+            jsPDF: {
+              unit: "mm",
+              format: "a4",
+              orientation: "portrait",
+            },
+          };
+
+          html2pdf()
+            .set(opt)
+            .from(simpleCV)
+            .save()
+            .then(() => {
+              console.log("Simple PDF generated successfully");
+              document.body.removeChild(simpleCV);
+              hideLoadingMessage();
+            })
+            .catch((error) => {
+              console.error("Simple PDF generation failed:", error);
+              document.body.removeChild(simpleCV);
+              hideLoadingMessage();
+              alert("Simple PDF generation failed: " + error.message);
+            });
+        } catch (error) {
+          console.error("Error in downloadSimplePDF:", error);
+          hideLoadingMessage();
+          alert(
+            "An error occurred while generating the simple PDF. Please try again."
+          );
+        }
+      }
+
+      function printCV() {
+        window.print();
+      }
+
+      function showLoadingMessage(title, subtitle) {
+        const loadingMsg = document.createElement("div");
+        loadingMsg.id = "loading-message";
+        loadingMsg.innerHTML = `
+                <div style="text-align: center;">
+                    <div style="font-size: 18px; margin-bottom: 10px;">${title}</div>
+                    <div style="font-size: 14px;">${subtitle}</div>
+                </div>
+            `;
+        loadingMsg.style.cssText =
+          "position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(102,126,234,0.95);color:white;padding:30px;border-radius:15px;z-index:10000;box-shadow:0 10px 30px rgba(0,0,0,0.3);";
+        document.body.appendChild(loadingMsg);
+      }
+
+      function hideLoadingMessage() {
+        const loadingMsg = document.getElementById("loading-message");
+        if (loadingMsg) {
+          document.body.removeChild(loadingMsg);
+        }
+      }
+
+      // Add smooth scroll animation
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section, index) => {
+          section.style.opacity = "0";
+          section.style.transform = "translateY(20px)";
+          section.style.animation = `fadeInUp 0.6s ease forwards ${
+            index * 0.1
+          }s`;
+        });
+      });
+    </script>
+  </body>
+</html>

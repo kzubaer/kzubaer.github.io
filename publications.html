@@ -6,21 +6,21 @@
   <title>Research — Kazi Md Zubaer</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <canvas id="particle-canvas" aria-hidden="true"></canvas>
   <header class="site-header">
     <nav class="nav container">
-      <a class="brand" href="index.html"><span class="brand-name">Something Cooking...</span></a>
+      <a class="brand" href="index.html"><span class="brand-name">Fruits...</span></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="research.html">Research</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="publications.html">Publications</a></li>
+        <li><a href="publications.html" class="active">Publications</a></li>
       </ul>
       <a class="cta" href="contact.html">Contact</a>
     </nav>
@@ -28,19 +28,19 @@
 
   <main class="container">
     <section class="section" data-aos="fade-up">
-      <h2 class="section-title">Research Projects</h2>
+      <h2 class="section-title">Publications</h2>
 
       <div class="project-list">
         <!-- EDIT: Add full project descriptions, links, DOIs -->
         <article class="project" data-aos="fade-up" data-aos-delay="50">
           <h3>1. Tuning supramolecular polymer length with chain stoppers</h3>
-          <p>Summary: precise control of polymer length via monofunctional and bifunctional chain stoppers — synthesis, spectroscopy, TEM characterization. <!--<em>(Journal, Year)</em> --></p>
-          <p> • Poster: USC 2025</p><span class="chain-stopper" onclick="openChainStopper()"><a href="">Click to learn more...</a></span>
+          <p>Summary: precise control of polymer length via monofunctional chain stoppers — synthesis, spectroscopy, TEM characterization. <em>(Journal, Year)</em></p>
+          <p class="project-meta">DOI: <a href="#">10.xxxx/xxxx</a> • Poster: ACS 2025</p>
         </article>
 
         <article class="project" data-aos="fade-up" data-aos-delay="120">
-          <h3>2. NIH- Triple-negative breast cancer (TNBC)</h3>
-          <p>Summary: Synthesis and characterizations of Amsacrine and Amsacrine-NO<sub>2</sub></p>
+          <h3>2. VT-UV–Vis study of cooperative assembly</h3>
+          <p>Summary: Temperature dependent UV–Vis reveals cooperative binding and critical points in assembly pathways.</p>
           <p class="project-meta">Supplementary data available on request.</p>
         </article>
       </div>
@@ -69,15 +69,10 @@
             ></a>
           </div>
         </div>
-      </footer>
+  </footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="main.js"></script>
   <script>AOS.init({ once: true, easing: 'ease-out-cubic' });</script>
-  <script>
-    function openChainStopper() {
-        window.open("chainstopper.html", "_blank"); // Replace with your actual CV path
-      }
-  </script>
 </body>
 </html>

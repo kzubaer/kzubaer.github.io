@@ -4,14 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Kazi Md Zubaer — Organic Chemist</title>
-
-    <!-- Google fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600&display=swap"
       rel="stylesheet"
     />
-
-    <!-- AOS for scroll animations -->
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
       rel="stylesheet"
@@ -20,8 +16,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-
     <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+    <script src="footer.js"></script>
 
     <meta name="color-scheme" content="light" />
   </head>
@@ -32,7 +29,7 @@
     <header class="site-header">
       <nav class="nav container">
         <a class="brand" href="index.html"
-          ><span class="brand-name">Kazi Md Zubaer</span></a
+          ><span class="brand-name">Chemistry is Life</span></a
         >
         <ul class="nav-links">
           <li><a href="index.html" class="active">Home</a></li>
@@ -63,16 +60,17 @@
               >Selected Projects</a
             >
             <a class="btn btn-ghost" href="about.html">About Me</a>
-            <a class="btn btn-primary" href="">Download CV</a>
+            <a class="btn btn-primary btn-cv" onclick="openCV()" id="CV" href=""
+              >View my CV</a>
           </div>
 
           <div class="hero-meta" aria-hidden="true">
             <div class="meta-card" data-aos="fade-right" data-aos-delay="200">
-              <strong>30+</strong>
+              <strong>2+</strong>
               <span>Publications & Posters</span>
             </div>
             <div class="meta-card" data-aos="fade-left" data-aos-delay="300">
-              <strong>10+</strong>
+              <strong>7+</strong>
               <span>Years Research Experience</span>
             </div>
           </div>
@@ -126,36 +124,12 @@
           <a class="btn btn-outline" href="contact.html">Get in touch</a>
         </div>
       </section>
-
-      <footer class="site-footer">
-        <div class="container footer-inner">
-          <div>
-            <strong>Kazi Md Zubaer</strong>
-            <p>Organic Chemist • Supramolecular Polymers • Spectroscopy</p>
-          </div>
-          <div class="socials">
-            <!-- EDIT: replace with your links -->
-            <a href="https://orcid.org/0009-0007-3839-0576" aria-label="ORCID"
-              ><i class="fab fa-orcid"></i
-            ></a>
-            <a href="https://scholar.google.com/citations?user=ZvHGQPkAAAAJ&hl=en" aria-label="Google Scholar"
-              ><i class="fas fa-graduation-cap"></i
-            ></a>
-            <a href="mailto:you@example.com" aria-label="Email"
-              ><i class="fas fa-envelope"></i
-            ></a>
-            <a href="https://www.linkedin.com/in/kzubaer/" aria-label="LinkedIn"
-              ><i class="fab fa-linkedin"></i
-            ></a>
-          </div>
-        </div>
-      </footer>
+      <div id="footer"></div>
     </main>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="main.js"></script>
     <script>
       AOS.init({
         once: true,
@@ -179,6 +153,9 @@
           move: { enable: true, speed: 1 },
         },
       });
+      function openCV() {
+        window.open("resume.html", "_blank"); // Replace with your actual CV path
+      }
     </script>
     <style>
       #particles-js {

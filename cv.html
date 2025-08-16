@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Kazi Md Zubaer</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Arial:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.5;
+            color: #000000;
+            background: #ffffff;
+            font-size: 11pt;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .cv-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 0.75in;
+            min-height: 11in;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30pt;
+            border-bottom: 2pt solid #000000;
+            padding-bottom: 15pt;
+        }
+        
+        .name {
+            font-family: Arial, sans-serif;
+            font-size: 24pt;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 8pt;
+            letter-spacing: 1pt;
+        }
+        
+        .contact-info {
+            font-size: 11pt;
+            color: #000000;
+            line-height: 1.4;
+        }
+        
+        .section {
+            margin-bottom: 20pt;
+            page-break-inside: avoid;
+        }
+        
+        .section-title {
+            font-family: Arial, sans-serif;
+            font-size: 14pt;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 10pt;
+            border-bottom: 1pt solid #000000;
+            padding-bottom: 3pt;
+            text-transform: uppercase;
+            letter-spacing: 0.5pt;
+        }
+        
+        .education-item, .experience-item {
+            margin-bottom: 12pt;
+            padding-left: 0;
+        }
+        
+        .institution, .role {
+            font-weight: 700;
+            font-size: 12pt;
+            color: #000000;
+            margin-bottom: 2pt;
+        }
+        
+        .degree, .company {
+            color: #000000;
+            font-style: italic;
+            margin-bottom: 2pt;
+            font-size: 11pt;
+        }
+        
+        .gpa, .duration {
+            color: #000000;
+            font-weight: 600;
+            font-size: 10pt;
+            margin-bottom: 4pt;
+        }
+        
+        .description {
+            color: #000000;
+            line-height: 1.4;
+            margin-top: 3pt;
+            font-size: 10pt;
+            text-align: justify;
+        }
+        
+        .research-interests {
+            color: #000000;
+            line-height: 1.5;
+            font-size: 11pt;
+            text-align: justify;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15pt;
+            margin-top: 10pt;
+        }
+        
+        .skill-category {
+            border: 1pt solid #000000;
+            padding: 8pt;
+        }
+        
+        .skill-category-title {
+            font-weight: 700;
+            font-size: 10pt;
+            margin-bottom: 5pt;
+            text-transform: uppercase;
+            border-bottom: 1pt solid #000000;
+            padding-bottom: 2pt;
+        }
+        
+        .skill-list {
+            font-size: 9pt;
+            line-height: 1.3;
+        }
+        
+        .bullet-point {
+            margin-bottom: 8pt;
+        }
+        
+        .bullet-point::before {
+            content: "• ";
+            font-weight: bold;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20pt;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                font-size: 10pt;
+            }
+            
+            .cv-container {
+                padding: 0.5in;
+                box-shadow: none;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            .download-section {
+                display: none;
+            }
+        }
+        
+        @page {
+            size: A4;
+            margin: 0.5in;
+        }
+        
+        .download-section {
+            text-align: center;
+            padding: 20pt 0;
+            margin-top: 30pt;
+            border-top: 1pt solid #000000;
+        }
+        
+        .download-btn {
+            background: #000000;
+            color: #ffffff;
+            padding: 8pt 16pt;
+            border: 2pt solid #000000;
+            font-size: 10pt;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 0 5pt;
+            text-transform: uppercase;
+        }
+        
+        .download-btn:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <header class="header">
+            <h1 class="name">KAZI MD ZUBAER</h1>
+            <div class="contact-info">
+                <strong>Email:</strong> kzubaer@gmail.com | kzubaer@email.sc.edu<br>
+                <strong>Phone:</strong> +1 (803) 497-1636
+            </div>
+        </header>
+        
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="education-item">
+                <div class="institution">University of South Carolina</div>
+                <div class="degree">Doctor of Philosophy (PhD) in Chemistry</div>
+                <div class="gpa">Current: 2nd Year</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="institution">Ball State University</div>
+                <div class="degree">Master of Science (M.S.) in Chemistry</div>
+                <div class="gpa">GPA: 3.82/4.00</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="institution">University of Dhaka</div>
+                <div class="degree">Master of Science (M.S.) in Organic Chemistry with Thesis</div>
+                <div class="gpa">GPA: 3.66/4.00 (3.87 WES) • Ranked 8th in Merit List</div>
+            </div>
+            
+            <div class="education-item">
+                <div class="institution">University of Dhaka</div>
+                <div class="degree">Bachelor of Science (B.S.) in Chemistry</div>
+                <div class="gpa">CGPA: 3.04/4.00</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Research Experience</h2>
+            
+            <div class="experience-item">
+                <div class="role">PhD Researcher</div>
+                <div class="company">University of South Carolina</div>
+                <div class="description">Conducting advanced research in synthesis of supramolecular polymers, characterization, self-assembly, host-guest chemistry, and controlling polymer length using chain stoppers.</div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="role">MS Researcher</div>
+                <div class="company">Ball State University</div>
+                <div class="description">Synthesized and characterized Bismuth-based MOFs with BiVO4 for POP degradation. Utilized advanced instrumentation including UV-Vis, FT-IR, HPLC, GC, UV-DRS, BET, TEM, XRD, freeze drying, and TGA.</div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="role">MS Researcher</div>
+                <div class="company">University of Dhaka</div>
+                <div class="description">Conducted comprehensive chemical investigation on the leaves of Corchorus olitorius L. Employed various analytical instruments including UV-Vis, IR, HPLC, GC, potentiometer, and polarimeter, along with diverse extraction processes.</div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="role">BS Researcher</div>
+                <div class="company">University of Dhaka</div>
+                <div class="description">Performed phytochemical investigation on Cauliflower and Cabbage using UV-Vis, IR, HPLC instruments. Applied hot/cold extraction methods and chromatography techniques (TLC, CC).</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <div class="role">Graduate Teaching Assistant</div>
+                <div class="company">Ball State University</div>
+                <div class="description">Supervised laboratory sessions, graded assignments, instructed undergraduate chemistry labs (CHEM 101, 111, 112), and provided academic tutoring to students.</div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="role">Lecturer of Chemistry</div>
+                <div class="company">Scholars' School & College (2018–2022)</div>
+                <div class="description">Developed comprehensive lesson plans, engaged students through practical experiments and presentations, taught laboratory safety protocols, and revised curriculum for student-centered learning approaches.</div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="role">Analytical Chemist</div>
+                <div class="company">Eskayef Pharmaceuticals Ltd. (2017–2018)</div>
+                <div class="description">Analyzed pharmaceutical products for quality assurance, calibrated analytical instruments, and developed innovative methodologies for pesticide residue analysis.</div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="role">Quality Control Chemist</div>
+                <div class="company">Popular Pharmaceuticals Ltd. (2016–2017)</div>
+                <div class="description">Conducted quality control checks on raw materials and finished products, troubleshot analytical instruments, and provided SOP training to laboratory personnel.</div>
+            </div>
+            
+            <div class="experience-item">
+                <div class="role">Vice President</div>
+                <div class="company">DUSAU (Dhaka University Science Alumni Union)</div>
+                <div class="description">Organized academic and social events, facilitated problem-solving initiatives, and coordinated community service activities.</div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Research Interests</h2>
+            <div class="research-interests">
+                Environmental Chemistry, Analytical Chemistry, Medicinal Chemistry, Nanotechnology, Computational Chemistry, Natural Chemistry, Bioorganic Chemistry, Organic Chemistry, Electrochemistry
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-category-title">Programming & Software</div>
+                    <div class="skill-list">
+                        HTML, CSS, Bootstrap, JavaScript, Adobe Photoshop
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-category-title">Languages</div>
+                    <div class="skill-list">
+                        Bangla (Native), English (Fluent)
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-category-title">Analytical Instruments</div>
+                    <div class="skill-list">
+                        HPLC, UHPLC, UV-Vis Spectroscopy, FT-IR, Polarimeter, Potentiometer, KF Titrator, GC, TLC, BET, TGA, UV-DRS, XRD, TEM
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="download-section">
+            <button class="download-btn" onclick="downloadPDF()">Download PDF</button>
+            <button class="download-btn" onclick="printCV()">Print CV</button>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+        function downloadPDF() {
+            const element = document.querySelector('.cv-container');
+            const opt = {
+                margin: 0.5,
+                filename: 'Kazi_Md_Zubaer_Professional_CV.pdf',
+                image: { type: 'jpeg', quality: 1.0 },
+                html2canvas: { 
+                    scale: 3,
+                    backgroundColor: '#ffffff',
+                    useCORS: true,
+                    letterRendering: true
+                },
+                jsPDF: { 
+                    unit: 'in', 
+                    format: 'letter', 
+                    orientation: 'portrait'
+                },
+                pagebreak: { 
+                    mode: ['avoid-all', 'css'],
+                    before: '.section'
+                }
+            };
+            
+            // Hide download section before generating PDF
+            const downloadSection = document.querySelector('.download-section');
+            downloadSection.style.display = 'none';
+            
+            html2pdf().set(opt).from(element).save().then(() => {
+                // Show download section again after PDF generation
+                downloadSection.style.display = 'block';
+            });
+        }
+        
+        function printCV() {
+            window.print();
+        }
+        
+        // Auto-download PDF on page load (optional)
+        document.addEventListener('DOMContentLoaded', function() {
+            // Uncomment the next line if you want auto-download
+            // setTimeout(downloadPDF, 1000);
+        });
+    </script>
+</body>
+</html>
