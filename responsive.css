@@ -1,0 +1,324 @@
+/* 
+RESPONSIVE ENHANCEMENTS - ADD TO YOUR EXISTING STYLE.CSS 
+This CSS is designed to work alongside your existing styles without conflicts
+*/
+
+/* Mobile Menu Toggle - Only adds new elements */
+.menu-toggle {
+  display: none !important; /* Force hide on all screen sizes by default */
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0.25rem;
+  background: rgb(41, 204, 147);
+  border: none;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #1359c9; /* Dark gray color - clearly visible */
+  margin: 3px 0;
+  transition: 0.3s;
+  transform-origin: center;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive Design Breakpoints */
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+  .container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+  
+  .hero-title {
+    font-size: 3rem !important;
+  }
+  
+  .nav-links {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Ensure desktop navigation colors are preserved */
+@media (min-width: 769px) {
+  .nav-links {
+    /* Reset any mobile overrides for desktop */
+    display: flex !important;
+    position: static !important;
+    background: transparent !important; /* Ensure no black background on desktop */
+    backdrop-filter: none !important;
+    flex-direction: row !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border-top: none !important;
+    border: none !important;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  /* Show mobile menu toggle ONLY on mobile devices */
+  .menu-toggle {
+    display: flex !important;
+  }
+  
+  /* Hide desktop navigation on mobile */
+  .nav-links {
+    display: none !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(222, 101, 101, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    flex-direction: column !important;
+    padding: 1rem !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  /* Show mobile menu when active */
+  .nav-links.active {
+    display: flex !important;
+  }
+  
+  /* Stack navigation items */
+  .nav {
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+  }
+  
+  /* Adjust CTA button size */
+  .nav .cta {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Hero section adjustments */
+  .hero {
+    padding: 2rem 1rem !important;
+    min-height: 70vh !important;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .hero-sub {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Stack hero buttons vertically */
+  .hero-cta {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .hero-cta .btn {
+    width: 100% !important;
+    max-width: 280px !important;
+    justify-content: center !important;
+  }
+  
+  /* Adjust hero meta cards */
+  .hero-meta {
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+  }
+  
+  .meta-card {
+    flex: 1 !important;
+    min-width: 120px !important;
+    padding: 1rem !important;
+  }
+  
+  /* Section adjustments */
+  .section {
+    padding: 3rem 1rem !important;
+  }
+  
+  .section-title {
+    font-size: 2rem !important;
+  }
+  
+  /* Cards grid - single column on mobile */
+  .cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+  
+  /* CTA strip */
+  .cta-strip {
+    padding: 3rem 1rem !important;
+  }
+  
+  .cta-strip h3 {
+    font-size: 1.75rem !important;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Further reduce hero size */
+  .hero {
+    padding: 1.5rem 1rem !important;
+    min-height: 60vh !important;
+  }
+  
+  .hero-title {
+    font-size: 2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .hero-sub {
+    font-size: 1rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .hero-cta {
+    gap: 0.75rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  /* Smaller buttons */
+  .btn {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.875rem !important;
+  }
+  
+  /* Smaller meta cards */
+  .meta-card {
+    padding: 0.75rem !important;
+  }
+  
+  .meta-card strong {
+    font-size: 1.25rem !important;
+  }
+  
+  .meta-card span {
+    font-size: 0.75rem !important;
+  }
+  
+  /* Smaller sections */
+  .section {
+    padding: 2rem 1rem !important;
+  }
+  
+  .section-title {
+    font-size: 1.75rem !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  /* Card adjustments */
+  .card-inner {
+    padding: 1.5rem !important;
+  }
+  
+  .card h3 {
+    font-size: 1.125rem !important;
+  }
+  
+  /* CTA strip */
+  .cta-strip {
+    padding: 2rem 1rem !important;
+  }
+  
+  .cta-strip h3 {
+    font-size: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Brand adjustments */
+  .brand {
+    font-size: 1.125rem !important;
+  }
+  
+  /* Navigation height */
+  .nav {
+    min-height: 50px !important;
+  }
+  
+  /* Adjust main content margin */
+  main {
+    margin-top: 60px !important;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 320px) {
+  .hero-title {
+    font-size: 1.75rem !important;
+  }
+  
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .card-inner {
+    padding: 1rem !important;
+  }
+  
+  .btn {
+    padding: 0.625rem 1.25rem !important;
+  }
+}
+
+/* Performance optimizations for mobile */
+@media (max-width: 768px) {
+  /* Disable expensive animations on mobile */
+  .card:hover {
+    transform: translateY(-2px) !important;
+  }
+  
+  /* Reduce animation duration */
+  * {
+    transition-duration: 0.2s !important;
+  }
+}
+
+/* Accessibility - Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .card:hover {
+    transform: none !important;
+  }
+  
+  .btn:hover {
+    transform: none !important;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support - only if not already handled */
+@media (prefers-color-scheme: dark) {
+  .menu-toggle span {
+    background: #f9fafb !important;
+  }
+  
+  .nav-links {
+    background: rgba(250, 251, 252, 0.95) !important;
+  }
+}
